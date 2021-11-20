@@ -34,3 +34,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.curl -H 'apikey: <QU1tTG91b01ZRjhXMnUyVmpvcTgu >' https://beaconcha.in/api/v1/block/1
+          echo add other action to build my project+server_address=https://beaconcha.in/dashboard?validators=32,40,48@home/runner/work/beaconcha.in/beaconcha.in
