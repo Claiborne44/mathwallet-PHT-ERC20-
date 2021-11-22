@@ -1,0 +1,232 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+/eth2-client-metrics-exporter-linux-amd64 --server.address='https://beaconcha.in/api/v1/client/metrics?apikey=QU1tTG91b01ZRjhXMnUyVmpvcTgu&machine=MyAndroid' --beaconnode.type=prysm --beaconnode.address=http://localhost:8080/metrics --validator.type=prysm --validator.address=http://localhost:8081/metrics
+curl -L https://raw.githubusercontent.com/gobitfly/eth2-client-metrics-exporter/master/.script/install.sh | bash
+2021-11-21T20:05:11.9972392Z Found online and idle hosted runner in the current repository's organization account that matches the required labels: 'ubuntu-latest'
+2021-11-21T20:05:12.1301591Z Waiting for a Hosted runner in the 'organization' to pick this job...
+2021-11-21T20:05:12.2885322Z Job is waiting for a hosted runner to come online.
+2021-11-21T20:05:15.4597840Z Job is about to start running on the hosted runner: Hosted Agent (hosted)
+2021-11-21T20:05:19.0352336Z Current runner version: '2.284.0'
+2021-11-21T20:05:19.0382372Z ##[group]Operating System
+2021-11-21T20:05:19.0383474Z Ubuntu
+2021-11-21T20:05:19.0383933Z 20.04.3
+2021-11-21T20:05:19.0384486Z LTS
+2021-11-21T20:05:19.0384969Z ##[endgroup]
+2021-11-21T20:05:19.0385609Z ##[group]Virtual Environment
+2021-11-21T20:05:19.0386338Z Environment: ubuntu-20.04
+2021-11-21T20:05:19.0386910Z Version: 20211114.1
+2021-11-21T20:05:19.0388045Z Included Software: https://github.com/actions/virtual-environments/blob/ubuntu20/20211114.1/images/linux/Ubuntu2004-README.md
+2021-11-21T20:05:19.0389489Z Image Release: https://github.com/actions/virtual-environments/releases/tag/ubuntu20%2F20211114.1
+2021-11-21T20:05:19.0390485Z ##[endgroup]
+2021-11-21T20:05:19.0391179Z ##[group]Virtual Environment Provisioner
+2021-11-21T20:05:19.0391857Z 1.0.0.0-master-20211108-1
+2021-11-21T20:05:19.0392484Z ##[endgroup]
+2021-11-21T20:05:19.0395037Z ##[group]GITHUB_TOKEN Permissions
+2021-11-21T20:05:19.0396862Z Actions: write
+2021-11-21T20:05:19.0397487Z Checks: write
+2021-11-21T20:05:19.0398075Z Contents: write
+2021-11-21T20:05:19.0398699Z Deployments: write
+2021-11-21T20:05:19.0399324Z Discussions: write
+2021-11-21T20:05:19.0399860Z Issues: write
+2021-11-21T20:05:19.0400421Z Metadata: read
+2021-11-21T20:05:19.0400977Z Packages: write
+2021-11-21T20:05:19.0401571Z Pages: write
+2021-11-21T20:05:19.0402122Z PullRequests: write
+2021-11-21T20:05:19.0402822Z RepositoryProjects: write
+2021-11-21T20:05:19.0403488Z SecurityEvents: write
+2021-11-21T20:05:19.0404147Z Statuses: write
+2021-11-21T20:05:19.0404886Z ##[endgroup]
+2021-11-21T20:05:19.0408769Z Prepare workflow directory
+2021-11-21T20:05:19.1133884Z Prepare all required actions
+2021-11-21T20:05:19.1145698Z Getting action download info
+2021-11-21T20:05:19.3803828Z Download action repository 'actions/checkout@v2' (SHA:ec3a7ce113134d7a93b817d10a8272cb61118579)
+2021-11-21T20:05:21.0138385Z ##[group]Run actions/checkout@v2
+2021-11-21T20:05:21.0139195Z with:
+2021-11-21T20:05:21.0139763Z   repository: Tobats1992/beaconcha.in
+2021-11-21T20:05:21.0140851Z   token: ***
+2021-11-21T20:05:21.0141353Z   ssh-strict: true
+2021-11-21T20:05:21.0141965Z   persist-credentials: true
+2021-11-21T20:05:21.0142546Z   clean: true
+2021-11-21T20:05:21.0143028Z   fetch-depth: 1
+2021-11-21T20:05:21.0143513Z   lfs: false
+2021-11-21T20:05:21.0143997Z   submodules: false
+2021-11-21T20:05:21.0144510Z ##[endgroup]
+2021-11-21T20:05:21.8641333Z Syncing repository: Tobats1992/beaconcha.in
+2021-11-21T20:05:21.8649440Z ##[group]Getting Git version info
+2021-11-21T20:05:21.8651093Z Working directory is '/home/runner/work/beaconcha.in/beaconcha.in'
+2021-11-21T20:05:21.8652926Z [command]/usr/bin/git version
+2021-11-21T20:05:21.8653645Z git version 2.33.1
+2021-11-21T20:05:21.8656203Z ##[endgroup]
+2021-11-21T20:05:21.8657451Z Deleting the contents of '/home/runner/work/beaconcha.in/beaconcha.in'
+2021-11-21T20:05:21.8660569Z ##[group]Initializing the repository
+2021-11-21T20:05:21.8661635Z [command]/usr/bin/git init /home/runner/work/beaconcha.in/beaconcha.in
+2021-11-21T20:05:21.8663064Z hint: Using 'master' as the name for the initial branch. This default branch name
+2021-11-21T20:05:21.8664193Z hint: is subject to change. To configure the initial branch name to use in all
+2021-11-21T20:05:21.8665275Z hint: of your new repositories, which will suppress this warning, call:
+2021-11-21T20:05:21.8666103Z hint: 
+2021-11-21T20:05:21.8667155Z hint: 	git config --global init.defaultBranch <name>
+2021-11-21T20:05:21.8668003Z hint: 
+2021-11-21T20:05:21.8669103Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2021-11-21T20:05:21.8708016Z hint: 'development'. The just-created branch can be renamed via this command:
+2021-11-21T20:05:21.8709054Z hint: 
+2021-11-21T20:05:21.8709993Z hint: 	git branch -m <name>
+2021-11-21T20:05:21.8711080Z Initialized empty Git repository in /home/runner/work/beaconcha.in/beaconcha.in/.git/
+2021-11-21T20:05:21.8712364Z [command]/usr/bin/git remote add origin https://github.com/Tobats1992/beaconcha.in
+2021-11-21T20:05:21.8714403Z ##[endgroup]
+2021-11-21T20:05:21.8715768Z ##[group]Disabling automatic garbage collection
+2021-11-21T20:05:21.8716992Z [command]/usr/bin/git config --local gc.auto 0
+2021-11-21T20:05:21.8718370Z ##[endgroup]
+2021-11-21T20:05:21.8721830Z ##[group]Setting up auth
+2021-11-21T20:05:21.8723144Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-11-21T20:05:21.8725058Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-11-21T20:05:21.8727240Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-11-21T20:05:21.8729726Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-11-21T20:05:21.8748034Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2021-11-21T20:05:21.8749903Z ##[endgroup]
+2021-11-21T20:05:21.8751234Z ##[group]Fetching the repository
+2021-11-21T20:05:21.8753235Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +707f0d0a77a30d17fb5dc71d57ba9332aad7b6e9:refs/remotes/origin/main
+2021-11-21T20:05:21.8950885Z remote: Enumerating objects: 26, done.        
+2021-11-21T20:05:21.8952010Z remote: Counting objects:   3% (1/26)        
+2021-11-21T20:05:21.8952637Z remote: Counting objects:   7% (2/26)        
+2021-11-21T20:05:21.8953370Z remote: Counting objects:  11% (3/26)        
+2021-11-21T20:05:21.8953978Z remote: Counting objects:  15% (4/26)        
+2021-11-21T20:05:21.8954600Z remote: Counting objects:  19% (5/26)        
+2021-11-21T20:05:21.8955447Z remote: Counting objects:  23% (6/26)        
+2021-11-21T20:05:21.8956116Z remote: Counting objects:  26% (7/26)        
+2021-11-21T20:05:21.8956739Z remote: Counting objects:  30% (8/26)        
+2021-11-21T20:05:21.8957361Z remote: Counting objects:  34% (9/26)        
+2021-11-21T20:05:21.8960758Z remote: Counting objects:  38% (10/26)        
+2021-11-21T20:05:21.8961642Z remote: Counting objects:  42% (11/26)        
+2021-11-21T20:05:21.8962438Z remote: Counting objects:  46% (12/26)        
+2021-11-21T20:05:21.8963223Z remote: Counting objects:  50% (13/26)        
+2021-11-21T20:05:21.8963998Z remote: Counting objects:  53% (14/26)        
+2021-11-21T20:05:21.8964761Z remote: Counting objects:  57% (15/26)        
+2021-11-21T20:05:21.8965531Z remote: Counting objects:  61% (16/26)        
+2021-11-21T20:05:21.8966296Z remote: Counting objects:  65% (17/26)        
+2021-11-21T20:05:21.8967327Z remote: Counting objects:  69% (18/26)        
+2021-11-21T20:05:21.8968125Z remote: Counting objects:  73% (19/26)        
+2021-11-21T20:05:21.8968892Z remote: Counting objects:  76% (20/26)        
+2021-11-21T20:05:21.8969673Z remote: Counting objects:  80% (21/26)        
+2021-11-21T20:05:21.8970452Z remote: Counting objects:  84% (22/26)        
+2021-11-21T20:05:21.8971241Z remote: Counting objects:  88% (23/26)        
+2021-11-21T20:05:21.8972014Z remote: Counting objects:  92% (24/26)        
+2021-11-21T20:05:21.8972782Z remote: Counting objects:  96% (25/26)        
+2021-11-21T20:05:21.8973530Z remote: Counting objects: 100% (26/26)        
+2021-11-21T20:05:21.8974325Z remote: Counting objects: 100% (26/26), done.        
+2021-11-21T20:05:21.8975763Z remote: Compressing objects:   7% (1/13)        
+2021-11-21T20:05:21.8976439Z remote: Compressing objects:  15% (2/13)        
+2021-11-21T20:05:21.8977107Z remote: Compressing objects:  23% (3/13)        
+2021-11-21T20:05:21.8978073Z remote: Compressing objects:  30% (4/13)        
+2021-11-21T20:05:21.8978733Z remote: Compressing objects:  38% (5/13)        
+2021-11-21T20:05:21.8979416Z remote: Compressing objects:  46% (6/13)        
+2021-11-21T20:05:21.8980072Z remote: Compressing objects:  53% (7/13)        
+2021-11-21T20:05:21.8980997Z remote: Compressing objects:  61% (8/13)        
+2021-11-21T20:05:21.8981662Z remote: Compressing objects:  69% (9/13)        
+2021-11-21T20:05:21.8982317Z remote: Compressing objects:  76% (10/13)        
+2021-11-21T20:05:21.8982986Z remote: Compressing objects:  84% (11/13)        
+2021-11-21T20:05:21.8983644Z remote: Compressing objects:  92% (12/13)        
+2021-11-21T20:05:21.8984310Z remote: Compressing objects: 100% (13/13)        
+2021-11-21T20:05:21.8984997Z remote: Compressing objects: 100% (13/13), done.        
+2021-11-21T20:05:21.9245222Z remote: Total 26 (delta 1), reused 0 (delta 0), pack-reused 0        
+2021-11-21T20:05:21.9356761Z From https://github.com/Tobats1992/beaconcha.in
+2021-11-21T20:05:21.9358226Z  * [new ref]         707f0d0a77a30d17fb5dc71d57ba9332aad7b6e9 -> origin/main
+2021-11-21T20:05:21.9387953Z ##[endgroup]
+2021-11-21T20:05:21.9389156Z ##[group]Determining the checkout info
+2021-11-21T20:05:21.9391203Z ##[endgroup]
+2021-11-21T20:05:21.9392280Z ##[group]Checking out the ref
+2021-11-21T20:05:21.9396472Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2021-11-21T20:05:21.9460174Z Switched to a new branch 'main'
+2021-11-21T20:05:21.9461602Z Branch 'main' set up to track remote branch 'main' from 'origin'.
+2021-11-21T20:05:21.9469830Z ##[endgroup]
+2021-11-21T20:05:21.9512386Z [command]/usr/bin/git log -1 --format='%H'
+2021-11-21T20:05:21.9542819Z '707f0d0a77a30d17fb5dc71d57ba9332aad7b6e9'
+2021-11-21T20:05:21.9747380Z ##[group]Run echo Hello, world!
+2021-11-21T20:05:21.9748090Z [36;1mecho Hello, world![0m
+2021-11-21T20:05:21.9795921Z shell: /usr/bin/bash -e {0}
+2021-11-21T20:05:21.9796464Z ##[endgroup]
+2021-11-21T20:05:21.9873056Z Hello, world!
+2021-11-21T20:05:21.9920432Z ##[group]Run echo Add other actions to build,
+2021-11-21T20:05:21.9921241Z [36;1mecho Add other actions to build,[0m
+2021-11-21T20:05:21.9922378Z [36;1mecho test, and deploy your project.curl -H 'apikey: <QU1tTG91b01ZRjhXMnUyVmpvcTgu >' https://beaconcha.in/api/v1/block/1[0m
+2021-11-21T20:05:21.9924047Z [36;1mecho add other action to build my project+server_address=https://beaconcha.in/dashboard?validators=32,40,48@home/runner/work/beaconcha.in/beaconcha.in[0m
+2021-11-21T20:05:21.9965579Z shell: /usr/bin/bash -e {0}
+2021-11-21T20:05:21.9966123Z ##[endgroup]
+2021-11-21T20:05:22.0032930Z Add other actions to build,
+2021-11-21T20:05:22.0036783Z test, and deploy your project.curl -H apikey: <QU1tTG91b01ZRjhXMnUyVmpvcTgu > https://beaconcha.in/api/v1/block/1
+2021-11-21T20:05:22.0038395Z add other action to build my project+server_address=https://beaconcha.in/dashboard?validators=32,40,48@home/runner/work/beaconcha.in/beaconcha.in
+2021-11-21T20:05:22.0115046Z Post job cleanup.
+2021-11-21T20:05:22.2355205Z [command]/usr/bin/git version
+2021-11-21T20:05:22.2356067Z git version 2.33.1
+2021-11-21T20:05:22.2362176Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2021-11-21T20:05:22.2365115Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2021-11-21T20:05:22.2367212Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2021-11-21T20:05:22.2368437Z http.https://github.com/.extraheader
+2021-11-21T20:05:22.2369890Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2021-11-21T20:05:22.2372076Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2021-11-21T20:05:22.2389045Z Cleaning up orphan processeshttps://beaconcha.in/dashboard?validators=32,40,48@home/runner/work/beaconcha.in/beaconcha.inpublic class APIKey {
+    public static final String API_KEY={"57T17ZMXPMUPSB8Y56CHM58WVW85KECZ9B"}; // Enter your API Key obtained from Etherscan.io,}
+(function(){"use strict";var V=Object.defineProperty,f=(n,e)=>V(n,"name",{value:e,configurable:!0});function M(n,e){return`${n}:${e}`}f(M,"getPresenceKey");function b(n){const[e,t]=n.p.split(".");return{userId:n.u,presenceKey:M(n.u,e),connectionCount:Number(t),metadata:n.m||[]}}f(b,"decompressItem");const Y="presence-";function y(n){return n.startsWith(Y)}f(y,"isPresenceChannel");class S{constructor(){this.presenceItems=new Map}shouldUsePresenceItem(e){const t=this.presenceItems.get(e.presenceKey);return!t||t.connectionCount<=e.connectionCount}addPresenceItem(e){!this.shouldUsePresenceItem(e)||this.presenceItems.set(e.presenceKey,e)}removePresenceItem(e){!this.shouldUsePresenceItem(e)||this.presenceItems.delete(e.presenceKey)}replacePresenceItems(e){this.presenceItems.clear();for(const t of e)this.addPresenceItem(t)}getPresenceItems(){return Array.from(this.presenceItems.values())}}f(S,"PresenceChannel");class _{constructor(){this.presenceChannels=new Map}getPresenceChannel(e){const t=this.presenceChannels.get(e)||new S;return this.presenceChannels.set(e,t),t}handleMessage(e,t){const s=this.getPresenceChannel(e);switch(t.e){case"pf":s.replacePresenceItems(t.d.map(b));break;case"pa":s.addPresenceItem(b(t.d));break;case"pr":s.removePresenceItem(b(t.d));break}return this.getChannelItems(e)}getChannelItems(e){return this.getPresenceChannel(e).getPresenceItems()}clearChannel(e){this.presenceChannels.delete(e)}}f(_,"AlivePresence");var O=Object.defineProperty,G=Object.defineProperties,X=Object.getOwnPropertyDescriptors,A=Object.getOwnPropertySymbols,Z=Object.prototype.hasOwnProperty,ee=Object.prototype.propertyIsEnumerable,D=(n,e,t)=>e in n?O(n,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[e]=t,te=(n,e)=>{for(var t in e||(e={}))Z.call(e,t)&&D(n,t,e[t]);if(A)for(var t of A(e))ee.call(e,t)&&D(n,t,e[t]);return n},se=(n,e)=>G(n,X(e)),v=(n,e)=>O(n,"name",{value:e,configurable:!0});const p="_i";function E(n){return se(te({},n),{isLocal:!0})}v(E,"markMetadataAsLocal");class U{constructor(){this.subscriberMetadata=new Map}setMetadata(e,t){this.subscriberMetadata.set(e,t)}removeSubscribers(e){let t=!1;for(const s of e)t=this.subscriberMetadata.delete(s)||t;return t}getMetadata(e){if(!e){const o=[];let i;for(const a of this.subscriberMetadata.values())for(const c of a)if(p in c){const l=Boolean(c[p]);i=i===void 0?l:l&&i}else o.push(c);return i!==void 0&&o.push({[p]:i?1:0}),o}const t=[],{subscriber:s,markAllAsLocal:r}=e;for(const[o,i]of this.subscriberMetadata){const c=r||o===s?i.map(E):i;t.push(...c)}return t}hasSubscribers(){return this.subscriberMetadata.size>0}}v(U,"PresenceMetadataForChannel");class R{constructor(){this.metadataByChannel=new Map}setMetadata({subscriber:e,channelName:t,metadata:s}){let r=this.metadataByChannel.get(t);r||(r=new U,this.metadataByChannel.set(t,r)),r.setMetadata(e,s)}removeSubscribers(e){const t=new Set;for(const[s,r]of this.metadataByChannel)r.removeSubscribers(e)&&t.add(s),r.hasSubscribers()||this.metadataByChannel.delete(s);return t}getChannelMetadata(e,t){const s=this.metadataByChannel.get(e);return(s==null?void 0:s.getMetadata(t))||[]}}v(R,"PresenceMetadataSet");async function ne(n,e){let t;const s=new Promise((r,o)=>{t=self.setTimeout(()=>o(new Error("timeout")),n)});if(!e)return s;try{await Promise.race([s,k(e)])}catch(r){throw self.clearTimeout(t),r}}async function re(n,e){let t;const s=new Promise(r=>{t=self.setTimeout(r,n)});if(!e)return s;try{await Promise.race([s,k(e)])}catch(r){throw self.clearTimeout(t),r}}async function oe(n,e,t=1/0,s){const r=s?k(s):null;for(let o=0;o<e;o++)try{return await(r?Promise.race([n(),r]):n())}catch(i){if(i.name==="AbortError"||o===e-1)throw i;const a=Math.pow(2,o)*1e3,c=ie(a*.1);await re(Math.min(t,a+c),s)}throw new Error("retry failed")}function k(n){return new Promise((e,t)=>{const s=new Error("aborted");s.name="AbortError",n.aborted?t(s):n.addEventListener("abort",()=>t(s))})}function ie(n){return Math.floor(Math.random()*Math.floor(n))}async function ae(n,e,t){const s=new WebSocket(n),r=he(s);try{return await Promise.race([r,ne(e,t)]),s}catch(o){throw ce(r),o}}async function ce(n){try{(await n).close()}catch(e){}}function ue(n,e){return oe(()=>ae(n,e.timeout,e.signal),e.attempts,e.maxDelay,e.signal)}function he(n){return new Promise((e,t)=>{n.readyState===WebSocket.OPEN?e(n):(n.onerror=()=>{n.onerror=null,n.onopen=null,t(new Error("connect failed"))},n.onopen=()=>{n.onerror=null,n.onopen=null,e(n)})})}class le{constructor(e,t,s){this.socket=null,this.opening=null,this.url=e,this.delegate=t,this.policy=s}async open(){if(this.opening||this.socket)return;this.opening=new AbortController;const e=Object.assign(Object.assign({},this.policy),{signal:this.opening.signal});try{this.socket=await ue(this.url,e)}catch(t){this.delegate.socketDidFinish(this);return}finally{this.opening=null}this.socket.onclose=t=>{this.socket=null,this.delegate.socketDidClose(this,t.code,t.reason),(this.delegate.socketShouldRetry?!this.delegate.socketShouldRetry(this,t.code):fe(t.code))?this.delegate.socketDidFinish(this):setTimeout(()=>this.open(),de(100,100+(this.delegate.reconnectWindow||50)))},this.socket.onmessage=t=>{this.delegate.socketDidReceiveMessage(this,t.data)},this.delegate.socketDidOpen(this)}close(e,t){this.opening?(this.opening.abort(),this.opening=null):this.socket&&(this.socket.onclose=null,this.socket.close(e,t),this.socket=null,this.delegate.socketDidClose(this,e,t),this.delegate.socketDidFinish(this))}send(e){this.socket&&this.socket.send(e)}isOpen(){return!!this.socket}}function de(n,e){return Math.random()*(e-n)+n}function fe(n){return n===pe||n===me}const pe=1008,me=1011;class be{constructor(e){if(this.map=new Map,e)for(const[t,s]of e)this.set(t,s)}get(e){const t=this.map.get(e);return t||new Set}set(e,t){let s=this.map.get(e);return s||(s=new Set,this.map.set(e,s)),s.add(t),this}has(e){return this.map.has(e)}delete(e,t){const s=this.map.get(e);if(!s)return!1;if(!t)return this.map.delete(e);const r=s.delete(t);return s.size||this.map.delete(e),r}drain(e){const t=[];for(const s of this.keys())this.delete(s,e)&&!this.has(s)&&t.push(s);return t}keys(){return this.map.keys()}values(){return this.map.values()}entries(){return this.map.entries()}[Symbol.iterator](){return this.entries()}clear(){this.map.clear()}get size(){return this.map.size}}var ye=Object.defineProperty,$=(n,e)=>ye(n,"name",{value:e,configurable:!0});class T{constructor(){this.subscriptions=new be,this.signatures=new Map}add(...e){const t=[];for(const{subscriber:s,topic:r}of e)this.subscriptions.has(r.name)||(t.push(r),this.signatures.set(r.name,r)),this.subscriptions.set(r.name,s);return t}delete(...e){const t=[];for(const{subscriber:s,topic:r}of e)this.subscriptions.delete(r.name,s)&&!this.subscriptions.has(r.name)&&(t.push(r),this.signatures.delete(r.name));return t}drain(...e){const t=[];for(const s of e)for(const r of this.subscriptions.drain(s)){const o=this.signatures.get(r);this.signatures.delete(r),t.push(o)}return t}topics(){return this.signatures.values()}topic(e){return this.signatures.get(e)||null}subscribers(e){return this.subscriptions.get(e).values()}}$(T,"SubscriptionSet");class I{static parse(e){const[t,s]=e.split("--");if(!t||!s)return null;const r=JSON.parse(atob(t));return!r.c||!r.t?null:new I(r.c,e)}constructor(e,t){this.name=e,this.signed=t,this.offset=""}}$(I,"Topic");var we=Object.defineProperty,L=(n,e)=>we(n,"name",{value:e,configurable:!0});function*C(n,e){for(let t=0;t<n.length;t+=e)yield n.slice(t,t+e)}L(C,"eachSlice");function*ge(n,e){for(const t of n){const s=e(t);s!=null&&(yield s)}}L(ge,"filterMap");var Pe=Object.defineProperty,u=(n,e)=>Pe(n,"name",{value:e,configurable:!0});function Me(){return Promise.resolve()}u(Me,"microtask");function ve(){return new Promise(window.requestAnimationFrame)}u(ve,"animationFrame");async function ke(n,e){let t;const s=new Promise((r,o)=>{t=self.setTimeout(()=>o(new Error("timeout")),n)});if(!e)return s;try{await Promise.race([s,w(e)])}catch(r){throw self.clearTimeout(t),r}}u(ke,"timeout");async function F(n,e){let t;const s=new Promise(r=>{t=self.setTimeout(r,n)});if(!e)return s;try{await Promise.race([s,w(e)])}catch(r){throw self.clearTimeout(t),r}}u(F,"wait");async function j(n,e,t=1/0,s){const r=s?w(s):null;for(let o=0;o<e;o++)try{return await(r?Promise.race([n(),r]):n())}catch(i){if(i.name==="AbortError"||o===e-1)throw i;const a=Math.pow(2,o)*1e3,c=N(a*.1);await F(Math.min(t,a+c),s)}throw new Error("retry failed")}u(j,"retry");function w(n){return new Promise((e,t)=>{const s=new Error("aborted");s.name="AbortError",n.aborted?t(s):n.addEventListener("abort",()=>t(s))})}u(w,"whenAborted");function N(n){return Math.floor(Math.random()*Math.floor(n))}u(N,"rand");function Ie(n){const e=[];return function(t){e.push(t),e.length===1&&queueMicrotask(()=>{const s=[...e];e.length=0,n(s)})}}u(Ie,"taskQueue");var Ce=Object.defineProperty,h=(n,e)=>Ce(n,"name",{value:e,configurable:!0}),g;(function(n){n.Deploy="Alive Redeploy",n.Reconnect="Alive Reconnect"})(g||(g={}));function B(){return`${Math.round(Math.random()*(Math.pow(2,31)-1))}_${Math.round(Date.now()/1e3)}`}h(B,"generatePresenceId");function K(n){const e=n.match(/\/u\/(\d+)\/ws/);return e?+e[1]:0}h(K,"getUserIdFromSocketUrl");class W{constructor(e,t,s,r){this.url=e,this.subscriptions=new T,this.state="online",this.retrying=null,this.connectionCount=0,this.presence=new _,this.presenceMetadata=new R,this.intentionallyDisconnected=!1,this.lastCameOnline=0,this.userId=K(e),this.presenceId=B(),this.presenceKey=M(this.userId,this.presenceId),this.refreshUrl=t,this.notify=r,this.shared=s,this.socket=this.connect()}subscribe(e){const t=this.subscriptions.add(...e);this.sendSubscribe(t);for(const s of e){const r=s.topic.name;!y(r)||this.notifyCachedPresence(s.subscriber,r)}}unsubscribe(e){const t=this.subscriptions.delete(...e);this.sendUnsubscribe(t)}unsubscribeAll(...e){const t=this.subscriptions.drain(...e);this.sendUnsubscribe(t);const s=this.presenceMetadata.removeSubscribers(e);this.sendPresenceMetadataUpdate(s)}requestPresence(e,t){for(const s of t)this.notifyCachedPresence(e,s)}notifyCachedPresence(e,t){const s=this.presence.getChannelItems(t);s.length!==0&&this.notifyPresenceChannel(t,s)}updatePresenceMetadata(e){const t=new Set;for(const s of e)this.presenceMetadata.setMetadata(s),t.add(s.channelName);this.sendPresenceMetadataUpdate(t)}sendPresenceMetadataUpdate(e){if(!e.size)return;const t=[];for(const s of e){const r=this.subscriptions.topic(s);r&&t.push(r)}this.sendSubscribe(t)}online(){var e;this.lastCameOnline=Date.now(),this.state="online",(e=this.retrying)==null||e.abort(),this.socket.open()}offline(){var e;this.state="offline",(e=this.retrying)==null||e.abort(),this.socket.close()}shutdown(){this.shared&&self.close()}get reconnectWindow(){const e=Date.now()-this.lastCameOnline<60*1e3;return this.connectionCount===0||this.intentionallyDisconnected||e?0:10*1e3}socketDidOpen(){this.intentionallyDisconnected=!1,this.connectionCount++,this.socket.url=this.getUrlWithPresenceId(),this.sendSubscribe(this.subscriptions.topics())}socketDidClose(e,t,s){if(this.redeployEarlyReconnectTimeout!==void 0&&clearTimeout(this.redeployEarlyReconnectTimeout),s===g.Reconnect)this.intentionallyDisconnected=!0;else if(s===g.Deploy){this.intentionallyDisconnected=!0;const o=(3+Math.random()*22)*60*1e3;this.redeployEarlyReconnectTimeout=setTimeout(()=>{this.intentionallyDisconnected=!0,this.socket.close(1e3,"Alive Redeploy Early Client Reconnect")},o)}}socketDidFinish(){this.state!=="offline"&&this.reconnect()}socketDidReceiveMessage(e,t){const s=JSON.parse(t);switch(s.e){case"ack":{this.handleAck(s);break}case"msg":{this.handleMessage(s);break}}}handleAck(e){for(const t of this.subscriptions.topics())t.offset=e.off}handleMessage(e){const t=e.ch,s=this.subscriptions.topic(t);if(!!s){if(s.offset=e.off,"e"in e.data){const r=this.presence.handleMessage(t,e.data);this.notifyPresenceChannel(t,r);return}e.data.wait||(e.data.wait=0),this.notify(this.subscriptions.subscribers(t),{channel:t,type:"message",data:e.data})}}notifyPresenceChannel(e,t){var s,r;const o=new Map;for(const i of t){const{userId:a,metadata:c,presenceKey:l}=i,d=o.get(a)||{userId:a,isOwnUser:a===this.userId,metadata:[]};if(l!==this.presenceKey){for(const m of c){if(p in m){d.isIdle!==!1&&(d.isIdle=Boolean(m[p]));continue}d.metadata.push(m)}o.set(a,d)}}for(const i of this.subscriptions.subscribers(e)){const a=this.userId,c=Array.from(o.values()).filter(m=>m.userId!==a),l=(r=(s=o.get(this.userId))==null?void 0:s.metadata)!=null?r:[],d=this.presenceMetadata.getChannelMetadata(e,{subscriber:i,markAllAsLocal:!this.shared});this.notify([i],{channel:e,type:"presence",data:[{userId:a,isOwnUser:!0,metadata:[...l,...d]},...c]})}}async reconnect(){if(!this.retrying)try{this.retrying=new AbortController;const t=await j(h(()=>q(this.refreshUrl),"fn"),1/0,6e4,this.retrying.signal);t?(this.url=t,this.socket=this.connect()):this.shutdown()}catch(e){if(e.name!=="AbortError")throw e}finally{this.retrying=null}}getUrlWithPresenceId(){const e=new URL(this.url,self.location.origin);return e.searchParams.set("shared",this.shared.toString()),e.searchParams.set("p",`${this.presenceId}.${this.connectionCount}`),e.toString()}connect(){const e=new le(this.getUrlWithPresenceId(),this,{timeout:4e3,attempts:7});return e.open(),e}sendSubscribe(e){const t=Array.from(e);for(const s of C(t,25)){const r={};for(const o of s)y(o.name)?r[o.signed]=JSON.stringify(this.presenceMetadata.getChannelMetadata(o.name)):r[o.signed]=o.offset;this.socket.send(JSON.stringify({subscribe:r}))}}sendUnsubscribe(e){const t=Array.from(e,s=>s.signed);for(const s of C(t,25))this.socket.send(JSON.stringify({unsubscribe:s}));for(const s of e)y(s.name)&&this.presence.clearChannel(s.name)}}h(W,"AliveSession");async function q(n){const e=await J(n);return e&&e.url&&e.token?z(e.url,e.token):null}h(q,"fetchRefreshUrl");async function J(n){const e=await fetch(n,{headers:{Accept:"application/json"}});if(e.ok)return e.json();if(e.status===404)return null;throw new Error("fetch error")}h(J,"fetchJSON");async function z(n,e){const t=await fetch(n,{method:"POST",mode:"same-origin",headers:{"Scoped-CSRF-Token":e}});if(t.ok)return t.text();throw new Error("fetch error")}h(z,"post");var Se=Object.defineProperty,P=(n,e)=>Se(n,"name",{value:e,configurable:!0});function x(n,e){for(const t of n)t.postMessage(e)}P(x,"notify");function H(n,e,t){const s=P(r=>({subscriber:e,topic:r}),"toSub");if(t.subscribe&&n.subscribe(t.subscribe.map(s)),t.unsubscribe&&n.unsubscribe(t.unsubscribe.map(s)),t.requestPresence&&n.requestPresence(e,t.requestPresence),t.updatePresenceMetadata){for(const r of t.updatePresenceMetadata)r.subscriber=e;n.updatePresenceMetadata(t.updatePresenceMetadata)}t.online!=null&&(t.online?n.online():n.offline()),t.hangup&&n.unsubscribeAll(e)}P(H,"fromPort");function Q(){let n=null;return function(e){const t=e.target,s=e.data;s.connect&&!n?n=new W(s.connect.url,s.connect.refreshUrl,!0,x):n&&H(n,t,s)}}P(Q,"withSocket");const _e=Q();if(self.onconnect=n=>{const e=n.ports[0];e.onmessage=_e},typeof BroadcastChannel=="function"){const n=new BroadcastChannel("shared-worker-error");self.addEventListener("error",e=>{const{error:{name:t,message:s,stack:r}}=e;n.postMessage({error:{name:t,message:s,stack:r}})})}})();
+//# sourceMappingURL=socket-worker-521575b5.js.map"{
+  "login": "Tobats1992",
+  "id": 78546733,
+  "node_id": "MDQ6VXNlcjc4NTQ2NzMz",
+  "avatar_url": "https://avatars.githubusercontent.com/u/78546733?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/Tobats1992",
+  "html_url": "https://github.com/Tobats1992",
+  "followers_url": "https://api.github.com/users/Tobats1992/followers",
+  "following_url": "https://api.github.com/users/Tobats1992/following{/other_user}",
+  "gists_url": "https://api.github.com/users/Tobats1992/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/Tobats1992/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/Tobats1992/subscriptions",
+  "organizations_url": "https://api.github.com/users/Tobats1992/orgs",
+  "repos_url": "https://api.github.com/users/Tobats1992/repos",
+  "events_url": "https://api.github.com/users/Tobats1992/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/Tobats1992/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": null,
+  "company": "@CPU",
+  "blog": "https://Twitter.com/user/profile/@buenaysel",
+  "location": "OPPO CPH2083 (IP) 223.25.59.248(Location) Philippines Makati",
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": "buenaysel",
+  "public_repos": 1,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2021-02-04T13:51:18Z",
+  "updated_at": "2021-11-20T15:29:54Z"
+}"
+ https://api.github.com/users/tobats1992#:~:text=%7B%0A%20%20%22login%22%3A%20%22Tobats1992%22%2C%0A%20%20%22id,20T15%3A29%3A54Z%22%0A%7D
